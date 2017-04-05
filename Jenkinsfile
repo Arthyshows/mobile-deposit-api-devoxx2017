@@ -70,7 +70,7 @@ stage('Version Release') {
     }
       
     stage('Publish Docker Image') {
-      withDockerRegistry([url: "https://${DOCKER_REGISTRY}/v2", credentialsId: 'test-registry']) { 
+      withDockerRegistry([url: "https://${DOCKER_REGISTRY}/v2", credentialsId: 'azure']) { 
         mobileDepositApiImage.push()
       }
     }
