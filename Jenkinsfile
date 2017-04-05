@@ -85,7 +85,7 @@ stage('Deploy to Prod') {
   docker.image('jcorioland/devoxx2017attendee').inside('-v /data:/data') {
 
     // Load the credentials needed to use the kubectl commandline
-    withCredentials([file(credentialsId: 'kuby', variable: 'KUBERNETES_SECRET_KEY')]) {
+    withCredentials([file(credentialsId: 'kubernetes', variable: 'KUBERNETES_SECRET_KEY')]) {
         unstash 'deployment.yml'
 
         // Execute this sh script
